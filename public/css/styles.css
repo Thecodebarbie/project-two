@@ -109,10 +109,21 @@ header .navbar .menu {
     transform: scale(0.97);
 }
 
+.text-content h2 {
+    margin-left: 50px; /* Moving the h2 to the right */
+    margin-top: 45px; /* Moving the h2 down the screen with minimal space */
+}
+
+.text-content h3,
+.text-content p {
+    margin-left: 50px; /* Moving the h2 to the right */
+    margin-top: 10px
+}
+
 /* Glassmorphism Effect for buttons in auth-buttons */
 .auth-buttons {
     text-align: center; /* Center the buttons */
-    padding-top: 50px; /* Move the buttons down */
+    padding-top: 90px; /* Move the buttons down */
 }
 .auth-buttons .btn {
     padding: 15px 50px; /* Make the buttons longer */
