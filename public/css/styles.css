@@ -71,6 +71,7 @@ header .navbar {
 header .navbar .menu {
     display: flex;
     flex-wrap: wrap;
+    padding-left: 185px; /* Increase the padding to move the menu links more to the right */
 }
 
 .navbar .menu li {
