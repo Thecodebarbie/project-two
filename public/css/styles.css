@@ -90,20 +90,22 @@ header .navbar .menu {
     color: #ffdcf0;
 }
 
+/* Glassmorphism Effect for buttons in Navbar */
 .navbar .buttons input {
-    outline: none;
-    color: #f2f2f2;
-    font-size: 18px;
-    font-weight: 500;
-    border-radius: 12px;
-    padding: 6px 15px;
-    border: none;
-    margin: 0 8px;
+    background: rgba(170, 109, 163, 0.1); /* Changed to #AA6DA3 with 0.1 opacity */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 10px 30px; /* Adjust padding for the navbar buttons */
+    border-radius: 15px; /* Rounded corners */
+    margin: 0 8px; /* Add margin between buttons */
     cursor: pointer;
     transition: all 0.3s ease;
-    background-image: linear-gradient(135deg, #AA6DA3 10%, #F0E5EF 100%);
+    font-size: 16px; /* Adjust text size for the navbar buttons */
 }
 
 .navbar .buttons input:hover {
+    background: rgba(170, 109, 163, 0.2); /* Changed to #AA6DA3 with 0.2 opacity */
     transform: scale(0.97);
 }
+
