@@ -13,3 +13,21 @@ const users = [
     { username: 'paigefr', email: 'paigefrancis@yahoo.com', password: 'paigefr123' ,employeeId: '5413' },
 ];
 
+
+app.post('/login', (req, res) => {
+    const { username, password, } =req.body;
+    const user = users.find(user => user.username === username && user.password === password);
+    if (!user) {
+        return res.status(401).send('Invalid username or password');
+    }
+    res.json({ promptEmployeeId: true }); 
+});
+
+app.post('/authenticate', (req, res) => {
+    const { userId, employeeId } = req.body;
+    const user = users.find(user => user.username === username && user.employeeId === employeeId);
+    if (!user) {
+        return res.status(401).send('Invalid employee ID');
+    }
+    res.send('Thank you for using two factor authentication');
+});
