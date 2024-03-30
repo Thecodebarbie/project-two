@@ -109,3 +109,8 @@ header .navbar .menu {
     transform: scale(0.97);
 }
 
+/* Glassmorphism Effect for buttons in auth-buttons */
+.auth-buttons {
+    text-align: center; /* Center the buttons */
+    padding-top: 50px; /* Move the buttons down */
+}
