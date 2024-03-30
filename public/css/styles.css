@@ -87,7 +87,7 @@ header .navbar .menu {
 }
 
 .navbar .menu a:hover {
-    color: #f2f2f2;
+    color: #ffdcf0;
 }
 
 .navbar .buttons input {
@@ -101,7 +101,7 @@ header .navbar .menu {
     margin: 0 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    background-image: linear-gradient(135deg, #ff9a9e 10%, #F6416C 100%);
+    background-image: linear-gradient(135deg, #AA6DA3 10%, #F0E5EF 100%);
 }
 
 .navbar .buttons input:hover {
