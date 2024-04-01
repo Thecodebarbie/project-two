@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize")
 const sequelize = require("../config/connection")
 
-class Calloff extends Model {}
+class Scheduleswap extends Model {}
 
-Calloff.init(
+Scheduleswap.init(
     {
         id : {
             type : DataTypes.INTEGER,
@@ -11,7 +11,14 @@ Calloff.init(
             primaryKey : true,
             autoIncrement : true
         },
-        schedule_id : {
+        current_schedule_id : {
+            type : DataTypes.INTEGER,
+            references : {
+                model : "schedule",
+                key : "id"
+            }
+        },
+        requested_schedule_id : {
             type : DataTypes.INTEGER,
             references : {
                 model : "schedule",
@@ -25,9 +32,6 @@ Calloff.init(
                 key : "id"
             }
 
-        },
-        reason : {
-            type : DataTypes.STRING
         },
         date_created : {
             type : DataTypes.DATE,
@@ -43,8 +47,8 @@ Calloff.init(
         timestamps : false,
         freezeTableName : true,
         underscored : true,
-        modelName : "calloff"
+        modelName : "scheduleswap"
     }
 )
 
-module.exports = Calloff
+module.exports = Scheduleswap

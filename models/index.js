@@ -1,10 +1,44 @@
-
-const User = require("./User")
 const Employee = require("./Employee")
 const Schedule = require("./Schedule")
+const Scheduleswap = require("./Scheduleswap")
 const Calloff = require("./Calloff")
 
-User.hasMany(Schedule, {
+Employee.hasMany(Schedule, {
+    foreignKey : employee_id,
+    onDelete : "CASCADE"
+})
+
+Schedule.hasMany(Employee, {
+    foreignKey : schedule_id
+})
+
+Employee.hasMany(Scheduleswap, {
+    foreignKey : employee_id,
+    onDelete : "CASCADE"
+})
+
+Scheduleswap.belongsTo(Employee, {
+    foreignKey : employee_id
+})
+
+Scheduleswap.belongsTo(Schedule, {
+    foreignKey : schedule_id
+})
+
+Employee.hasMany(Calloff, {
+    foreignKey : employee_id,
+    onDelete : "CASCADE"
+})
+
+Calloff.belongsTo(Employee, {
+    foreignKey : employee_id
+})
+
+Calloff.belongsTo(Schedule, {
+    foreignKey : schedule_id
+})
+
+/*User.hasMany(Schedule, {
     foreignKey : user_id,
     onDelete : "CASCADE"
 })
@@ -33,6 +67,6 @@ Calloff.belongsTo(Schedule, {
 
 Calloff.belongsTo(Employee, {
     foreignKey : "employee_id"
-})
+})*/
 
-module.exports = { User, Employee, Schedule, Calloff}
+module.exports = { Employee, Schedule, Scheduleswap, Calloff}
