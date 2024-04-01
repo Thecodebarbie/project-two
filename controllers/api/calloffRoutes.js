@@ -2,13 +2,13 @@
 const router = require('express').Router()
 const CallOffRequest = require('../models')
 
-// Endpoint to initiate a call-off request
-router.post('/calloff/request', async (req, res) => {
+// Endpoint to initiate a calloff request
+router.post('/request', async (req, res) => {
     try {
         // Extract data from the request body
         const { employeeID, startDate, endDate, reason } = req.body;
 
-        // Create a new call-off request
+        // Create a new calloff request
         const newCallOffRequest = new CallOffRequest({
             employeeID,
             startDate,
@@ -17,7 +17,7 @@ router.post('/calloff/request', async (req, res) => {
             status: 'Pending' // Initial status
         })
 
-        // Save the new call-off request to the database
+        // Save the new calloff request to the database
         await newCallOffRequest.save()
 
         // Send a success response
@@ -29,13 +29,13 @@ router.post('/calloff/request', async (req, res) => {
     }
 });
 
-// Endpoint to retrieve all call-off requests
-router.get('/calloff/requests', async (req, res) => {
+// Endpoint to retrieve all calloff requests
+router.get('/requests', async (req, res) => {
     try {
-        // Retrieve all call-off requests from the database
+        // Retrieve all calloff requests from the database
         const callOffRequests = await CallOffRequest.find()
 
-        // Send the call-off requests as a response
+        // Send the calloff requests as a response
         res.status(200).json({ callOffRequests })
     } catch (error) {
         // Handle errors
@@ -44,8 +44,8 @@ router.get('/calloff/requests', async (req, res) => {
     }
 })
 
-// Endpoint to update the status of a call-off request
-router.put('/calloff/requests/:id', async (req, res) => {
+// Endpoint to update the status of a calloff request
+router.put('/requests/:id', async (req, res) => {
     try {
         // Extract the request ID from the request parameters
         const { id } = req.params
@@ -65,17 +65,17 @@ router.put('/calloff/requests/:id', async (req, res) => {
     }
 });
 
-// Endpoint to retrieve the call-off schedule
-router.get('/calloff/schedule', async (req, res) => {
+// Endpoint to retrieve the calloff schedule
+router.get('/schedule', async (req, res) => {
     try {
-        // Retrieve approved call-off requests from the database
+        // Retrieve approved calloff requests from the database
         const approvedCallOffRequests = await CallOffRequest.find({ status: 'Approved' })
 
-        // Send the approved call-off requests as a response
+        // Send the approved calloff requests as a response
         res.status(200).json({ approvedCallOffRequests })
     } catch (error) {
         // Handle errors
-        console.error('Error retrieving call-off schedule:', error)
+        console.error('Error retrieving calloff schedule:', error)
         res.status(500).json({ message: 'Internal server error' })
     }
 });

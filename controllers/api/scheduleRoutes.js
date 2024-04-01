@@ -3,7 +3,7 @@ const router = require('express').Router()
 const Schedule = require('../models')
 
 // Handle POST request to create a new schedule
-router.post('/schedules', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         // Extract data from the request body
         const { startTime, endTime } = req.body
@@ -27,7 +27,7 @@ router.post('/schedules', async (req, res) => {
 });
 
 // Handle GET request to retrieve a specific schedule by ID
-router.get('/schedules/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
         // Extract the schedule ID from the request parameters
         const { id } = req.params
@@ -51,7 +51,7 @@ router.get('/schedules/:id', async (req, res) => {
 });
 
 // Handle GET request to retrieve all schedules
-router.get('/schedules', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         // Retrieve all schedules from the database
         const schedules = await Schedule.find()
@@ -66,7 +66,7 @@ router.get('/schedules', async (req, res) => {
 });
 
 // Handle PUT request to update an existing schedule
-router.put('/schedules/:id', async (req, res) => {
+router.put('/:id', async (req, res) => {
     try {
         // Extract the schedule ID from the request parameters
         const { id } = req.params
@@ -100,7 +100,7 @@ router.put('/schedules/:id', async (req, res) => {
 });
 
 // Handle DELETE request to delete an existing schedule by ID
-router.delete('/schedules/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
         // Extract the schedule ID from the request parameters
         const { id } = req.params
