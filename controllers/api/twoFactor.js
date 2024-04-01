@@ -24,10 +24,14 @@ app.post('/login', (req, res) => {
 });
 
 app.post('/authenticate', (req, res) => {
-    const { userId, employeeId } = req.body;
+    const { username, employeeId } = req.body;
     const user = users.find(user => user.username === username && user.employeeId === employeeId);
     if (!user) {
         return res.status(401).send('Invalid employee ID');
     }
-    res.send('Thank you for using two factor authentication');
+    res.send('Thank you for using two factor authentication!');
+});
+
+app.listen(3001, () => {
+    console.log(`Server is running on http://localhost:3001`);
 });
