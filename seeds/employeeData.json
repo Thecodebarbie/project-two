@@ -1,0 +1,43 @@
+[
+    {
+        "username" : "Tim-Robert",
+        "email" : "timrobert@gmail.com",
+        "password" : "password123",
+        "employeeID" : "1245",
+        "managerID" : "NULL"
+    },
+    {
+        "username" : "Rob-Alexander",
+        "email": "robalexander@hotmail.com",
+        "password" : "password123",
+        "employeeID" : "1345",
+        "managerID" : "NULL"
+    },
+    {
+        "name" : "Diana-John",
+        "email" : "dianajohn@yahoo.com",
+        "password" : "password123",
+        "employeeID" : "2345",
+        "managerID" : "NULL"
+    },
+    {
+        "username" : "Mary-Xavier",
+        "email": "maryxavier@gmail.com",
+        "password" : "password123",
+        "employeeID" : "1234",
+        "managerID" : "NULL"
+    },
+    {
+        "username" : "April-Daniel",
+        "email" : "aprildaniel@aol.com",
+        "password" : "password123",
+        "employeeID" : "1254",
+        "managerID" : "NULL"
+    },
+    {   "username" : "Paige-Francis",
+        "email" : "paigefrancis@yahoo-com",
+        "password" : "password123",
+        "employeeID" : "NULL",
+        "managerID" : "5413"
+    }
+]
