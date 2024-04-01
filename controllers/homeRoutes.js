@@ -1,32 +1,37 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { Employee } = require('../models');
 const withAuth = require('../utils/auth');
 
 
 //http://localhost:3001/
 router.get('/', async (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect('/profile');
-    return;
-  }
-  res.render('homepage');
+  res.render('landing');
 });
 
-//http://localhost:3001/profile
+//http://localhost:3001/login
+router.get('/login', async (req, res) => {
+  // If the employee is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/dashboard');
+    return;
+  }
+  res.render('login');
+});
+
+//http://localhost:3001/dashboard
 // Use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
     try {
-      // Find the logged in user based on the session ID
-      const userData = await User.findByPk(req.session.user_id, {
+      // Find the logged in employee based on the session ID
+      const employeeData = await Employee.findByPk(req.session.employee_id, {
         attributes: { exclude: ['password'] },
         include: [{ model: Schedule }],
       });
   
-      const user = userData.get({ plain: true });
+      const employee = employeeData.get({ plain: true });
   
-      res.render('profile', {
-        ...user,
+      res.render('dashboard', {
+        ...employee,
         logged_in: true
       });
     } catch (err) {

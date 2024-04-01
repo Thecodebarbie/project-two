@@ -1,9 +1,9 @@
 const router = require("express").Router()
 
 // Importing the API endpoint routes
-const userRoutes = require("./userRoutes")
+const employeeRoutes = require("./employeeRoutes")
 
-// http://localhost:3001/api/user
-router.use("/users", userRoutes)
+// http://localhost:3001/api/employees
+router.use("/employees", employeeRoutes)
 
 module.exports = router
