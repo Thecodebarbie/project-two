@@ -26,9 +26,6 @@ Calloff.init(
             }
 
         },
-        reason : {
-            type : DataTypes.STRING
-        },
         dateCreated : {
             type : DataTypes.DATE,
             allowNull : false,
@@ -43,6 +40,9 @@ Calloff.init(
             type : DataTypes.DATE,
             allowNull : false,
             defaultValue : DataTypes.NOW
+        },
+        reason : {
+            type : DataTypes.STRING
         },
         status : {
             type : DataTypes.STRING
