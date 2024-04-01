@@ -2,6 +2,7 @@
 const router = require('express').Router()
 const Schedule = require('../models')
 
+
 // Handle POST request to create a new schedule
 router.post('/', async (req, res) => {
     try {
