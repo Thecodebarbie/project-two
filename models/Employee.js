@@ -35,7 +35,7 @@ Employee.init(
         len : [8],
       },
     },
-    manager_id : {
+    managerID : {
       type : DataTypes.INTEGER
     }
   },
