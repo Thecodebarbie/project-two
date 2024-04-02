@@ -35,7 +35,7 @@ Employee.init(
         len : [8],
       },
     },
-    managerID : {
+    manager_id : {
       type : DataTypes.INTEGER,
       defaultValue : 6
     }

@@ -8,7 +8,7 @@ router.post('/signup', async (req, res) => {
     const employeeData = await Employee.create(req.body)
 
     req.session.save(() => {
-      req.session.employeeID = employeeData.id
+      req.session.employee_id = employeeData.id
       req.session.logged_in = true
        req.session.name=employeeData.name
       res.status(200).json(employeeData)
@@ -40,7 +40,7 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.employeeID = employeeData.id
+      req.session.employee_id = employeeData.id
       req.session.logged_in = true
       
       res.json({ employee: employeeData, message: 'You are now logged in!' })

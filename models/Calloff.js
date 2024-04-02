@@ -11,14 +11,14 @@ Calloff.init(
             primaryKey : true,
             autoIncrement : true
         },
-        scheduleID : {
+        schedule_id : {
             type : DataTypes.INTEGER,
             references : {
                 model : "schedule",
                 key : "id"
             }
         },
-        employeeID : {
+        employee_id : {
             type : DataTypes.INTEGER,
             references : {
                 model : "employee",
@@ -26,17 +26,17 @@ Calloff.init(
             }
 
         },
-        dateCreated : {
+        date_created : {
             type : DataTypes.DATE,
             allowNull : false,
             defaultValue : DataTypes.NOW
         },
-        startDate : {
+        start_date : {
             type : DataTypes.DATE,
             allowNull : false,
             defaultValue : DataTypes.NOW
         },
-        endDate : {
+        end_date : {
             type : DataTypes.DATE,
             allowNull : false,
             defaultValue : DataTypes.NOW
