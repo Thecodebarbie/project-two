@@ -1,0 +1,62 @@
+[
+    {
+        "dateCreated" : "2024-04-01",
+        "startTime" : "08:00:00",
+        "endTime" : "16:00:00"
+    },
+    {
+        "dateCreated" : "2024-04-01",
+        "startTime" : "09:00:00",
+        "endTime" : "17:00:00"
+    },
+    {
+        "dateCreated" : "2024-04-01",
+        "startTime" : "10:00:00",
+        "endTime" : "18:00:00"
+    },
+    {
+        "dateCreated" : "2024-04-01",
+        "startTime" : "11:00:00",
+        "endTime" : "19:00:00"
+    },
+    {
+        "dateCreated" : "2024-04-01",
+        "startTime" : "12:00:00",
+        "endTime" : "20:00:00"
+    },
+    {
+        "dateCreated" : "2024-04-01",
+        "startTime" : "01:00:00",
+        "endTime" : "19:00:00"
+    },
+    {
+        "dateCreated" : "2024-04-02",
+        "startTime" : "08:00:00",
+        "endTime" : "16:00:00"
+    },
+    {
+        "dateCreated" : "2024-04-02",
+        "startTime" : "09:00:00",
+        "endTime" : "17:00:00"
+    },
+    {
+        "dateCreatedCreated" : "2024-04-02",
+        "startTime" : "10:00:00",
+        "endTime" : "18:00:00"
+    },
+    {
+        "dateCreatedCreated" : "2024-04-02",
+        "startTime" : "11:00:00",
+        "endTime" : "19:00:00"
+    },
+    {
+        "dateCreated" : "2024-04-02",
+        "startTime" : "12:00:00",
+        "endTime" : "20:00:00"
+    },
+    {
+        "dateCreated" : "2024-04-02",
+        "startTime" : "01:00:00",
+        "endTime" : "19:00:00"
+    }
+]

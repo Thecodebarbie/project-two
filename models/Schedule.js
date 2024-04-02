@@ -11,6 +11,10 @@ Schedule.init(
             primaryKey : true,
             autoIncrement : true
         },
+        dateCreated : {
+            type : DataTypes.DATE,
+            defaultValue : DataTypes.NOW
+        },
         startTime : {
             type : DataTypes.DATE,
             allowNull : false,
