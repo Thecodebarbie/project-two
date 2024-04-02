@@ -1,6 +1,6 @@
 // Import necessary modules and models
 const router = require('express').Router()
-const ScheduleSwapRequest = require('../models')
+const ScheduleSwapRequest = require('../../models')
 
 // Endpoint to initiate a schedule swap request
 router.post('/request', async (req, res) => {

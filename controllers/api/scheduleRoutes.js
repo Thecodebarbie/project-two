@@ -1,6 +1,6 @@
 // Import necessary modules and models
 const router = require('express').Router()
-const Schedule = require('../models')
+const Schedule = require('../../models')
 
 
 // Handle POST request to create a new schedule

@@ -1,6 +1,6 @@
 // Import necessary modules and models
 const router = require('express').Router()
-const CallOffRequest = require('../models')
+const CallOffRequest = require('../../models')
 
 // Endpoint to initiate a calloff request
 router.post('/request', async (req, res) => {
