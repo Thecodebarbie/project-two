@@ -7,10 +7,11 @@ const Schedule = require('../models')
 router.post('/', async (req, res) => {
     try {
         // Extract data from the request body
-        const { startTime, endTime } = req.body
+        const { dateCreated, startTime, endTime } = req.body
 
         // Create a new schedule
         const newSchedule = new Schedule({
+            dateCreated,
             startTime,
             endTime
         });
@@ -82,9 +83,10 @@ router.put('/:id', async (req, res) => {
         }
 
         // Extract updated schedule data from the request body
-        const { startTime, endTime } = req.body
+        const { dateCreated, startTime, endTime } = req.body
 
         // Update the schedule with the new data
+        schedule.dateCreated = dateCreated
         schedule.startTime = startTime
         schedule.endTime = endTime
 
