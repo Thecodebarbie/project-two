@@ -13,7 +13,9 @@ body {
     height: 100vh;
     width: 100%;
     display: flex;
-    background-image: linear-gradient(135deg, #AA6DA3 10%, #F0E5EF 100%);
+    /*background-image: linear-gradient(135deg, #AA6DA3 10%, #F0E5EF 100%);*/
+    background-image: url(../images/saavy-backgrnd.jpeg);
+    
 }
 body::before,
 body::after {
