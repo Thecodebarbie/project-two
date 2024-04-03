@@ -18,6 +18,9 @@ router.get('/login', async (req, res) => {
   res.render('login')
 });
 
+router.get('/register', (req, res)=> {
+  res.render('register')
+})
 //http://localhost:3001/dashboard
 // Use withAuth middleware to prevent access to route
 router.get('/dashboard', withAuth, async (req, res) => {
