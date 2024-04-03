@@ -41,6 +41,7 @@ router.post('/login', async (req, res) => {
 
     req.session.save(() => {
       req.session.employee_id = employeeData.id
+      req.session.manager_id = employeeData.manager_id
       req.session.logged_in = true
       
       res.json({ employee: employeeData, message: 'You are now logged in!' })
@@ -67,7 +68,7 @@ router.get('/', async (req, res) => {
   try {
   const employeeData = await Employee.findAll({
     where: {
-      manager_id: null
+      manager_id: 106
     }
   })
   res.status(200).json(employeeData)
