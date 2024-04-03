@@ -1,19 +1,33 @@
-const loginForm = document.getElementById('form-login')
-
-function loginHandler(event){ // do a fetch call to the login route to redirect to dashboard
-    event.preventDefault()
-    //location.href='/dashboard'
-    console.log("hello!")
 
 
-    // display loader
-    document.getElementById("login-container").style.display = "none"
-    document.getElementById("loader").style.display = "block"
+// do a fetch call to the login route to redirect to dashboard
+const loginFormHandler = async (event) => {
+    event.preventDefault();
+  
+    // Collect values from the login form
+    const email = document.querySelector('#login-email').value.trim();
+    const password = document.querySelector('#login-password').value.trim();
+  
+    if (email && password) {
+      // Send a POST request to the API endpoint
+      const response = await fetch('/api/employees/login', {
+        method: 'POST',
+        body: JSON.stringify({ email, password }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+  
+      if (response.ok) {
+        // If successful, redirect the browser to the profile page
+        document.location.replace('/dashboard');
+      } else {
+        alert(response.statusText);
+      }
+    }
+  };
+  
+  document
+    .querySelector('#form-login')
+    .addEventListener('submit', loginFormHandler);
 
-
-    setTimeout(() => {
-        location.href='/dashboard'
-    }, 2000)
-}
-
-loginForm.addEventListener('submit', loginHandler)
+//loginForm.addEventListener('submit', loginHandler)
+//loginBtn.addEventListener('submit', loginHandler)
