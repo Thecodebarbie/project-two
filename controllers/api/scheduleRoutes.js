@@ -1,18 +1,19 @@
 // Import necessary modules and models
 const router = require('express').Router()
-const Schedule = require('../models')
+const Schedule = require('../../models')
 
 
 // Handle POST request to create a new schedule
 router.post('/', async (req, res) => {
     try {
         // Extract data from the request body
-        const { startTime, endTime } = req.body
+        const { date_created, start_time, end_time } = req.body
 
         // Create a new schedule
         const newSchedule = new Schedule({
-            startTime,
-            endTime
+            date_created,
+            start_time,
+            end_time
         });
 
         // Save the new schedule to the database
@@ -82,11 +83,12 @@ router.put('/:id', async (req, res) => {
         }
 
         // Extract updated schedule data from the request body
-        const { startTime, endTime } = req.body
+        const { date_created, start_time, end_time } = req.body
 
         // Update the schedule with the new data
-        schedule.startTime = startTime
-        schedule.endTime = endTime
+        schedule.date_created = date_created
+        schedule.start_time = start_time
+        schedule.end_time = end_time
 
         // Save the updated schedule to the database
         await schedule.save()

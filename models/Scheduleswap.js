@@ -11,21 +11,21 @@ Scheduleswap.init(
             primaryKey : true,
             autoIncrement : true
         },
-        currentScheduleID : {
+        current_schedule_id : {
             type : DataTypes.INTEGER,
             references : {
                 model : "schedule",
                 key : "id"
             }
         },
-        requestedScheduleID : {
+        requested_schedule_id : {
             type : DataTypes.INTEGER,
             references : {
                 model : "schedule",
                 key : "id"
             }
         },
-        employeeID : {
+        employee_id : {
             type : DataTypes.INTEGER,
             references : {
                 model : "employee",
@@ -33,7 +33,7 @@ Scheduleswap.init(
             }
 
         },
-        dateCreated : {
+        date_created : {
             type : DataTypes.DATE,
             allowNull : false,
             defaultValue : DataTypes.NOW

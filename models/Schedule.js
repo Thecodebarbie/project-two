@@ -11,17 +11,21 @@ Schedule.init(
             primaryKey : true,
             autoIncrement : true
         },
-        startTime : {
+        date_created : {
+            type : DataTypes.DATE,
+            defaultValue : DataTypes.NOW
+        },
+        start_time : {
             type : DataTypes.DATE,
             allowNull : false,
             defaultValue : DataTypes.NOW
         },
-        endTime : {
+        end_time : {
             type : DataTypes.DATE,
             allowNull : false,
             defaultValue : DataTypes.NOW
         },
-        employeeID : {
+        employee_id : {
             type : DataTypes.INTEGER,
             references : {
                 model : "employee",
