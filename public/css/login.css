@@ -13,7 +13,7 @@ body {
     height: 100vh;
     width: 100%;
     display: flex;
-    background-image: linear-gradient(135deg, #AA6DA3 10%, #F0E5EF 100%);
+    background-image: linear-gradient(135deg, #AA6DA3 10%, #3c0554 100%);
 }
 
 body::before,
@@ -115,7 +115,7 @@ header .navbar .menu {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 278px;
+    margin-top: 250px;
     /* Added margin-top to move the form down */
 }
 
