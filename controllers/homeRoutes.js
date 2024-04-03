@@ -23,7 +23,7 @@ router.get('/login', async (req, res) => {
 router.get('/dashboard', withAuth, async (req, res) => {
     try {
       // Find the logged in employee based on the session ID
-      const employeeData = await Employee.findByPk(req.session.employeeID, {
+      const employeeData = await Employee.findByPk(req.session.employee_id, {
         attributes: { exclude: ['password'] },
         include: [{ model: Schedule }],
       })

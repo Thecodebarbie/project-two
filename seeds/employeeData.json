@@ -1,0 +1,36 @@
+[
+    {
+        "name" : "Tim Robert",
+        "email" : "timrob@hotmail.com",
+        "password" : "password123"
+    },
+    {
+        "name" : "Rob Alexander",
+        "email" : "robal@gmail.com",
+        "password" : "password123"
+    },
+    {
+        "name" : "Diana John",
+        "email" : "dianajo@hotmail.com",
+        "password" : "password123"
+    },
+    {
+        "name" : "Mary Xavier",
+        "email" : "maryxa@hotmail.com",
+        "password" : "password123"
+    },
+    {
+        "name" : "April Daniel",
+        "email" : "aprildan@hotmail.com",
+        "password" : "password123"
+        
+    },
+    {
+        "name" : "Paige Francis",
+        "email" : "paigefr@hotmail.com",
+        "password" : "password123",
+        "manager_id" : 106
+
+        
+    }
+]
