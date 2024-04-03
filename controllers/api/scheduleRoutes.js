@@ -1,6 +1,6 @@
 // Import necessary modules and models
 const router = require('express').Router()
-const {Employee, Schedule} = require('../../models')
+const { Schedule} = require('../../models')
 
 
 
@@ -31,7 +31,7 @@ router.post('/', async (req, res) => {
 })
 
 // Handle GET request to retrieve a specific schedule by employeeId
-router.get('employee/:id', async (req, res) => {
+router.get('/employee/:id', async (req, res) => {
     try {
         // Extract the schedule ID from the request parameters
         const { employeeId } = req.params
@@ -60,16 +60,17 @@ router.get('employee/:id', async (req, res) => {
 })
 
 // Handle GET request to retrieve next schedule by employeeId
-router.get('nextschedule/:id', async (req, res) => {
+// http://localhost:3001/api/schedules/nextschedule/:id
+router.get('/nextschedule/:id', async (req, res) => {
     try {
         // Extract the schedule ID from the request parameters
-        const { employeeId } = req.params
-
+        const employeeId  = req.params
+        
         // Retrieve the next schedule from the database based on the provided employeeId
         const nextScheduleData = await Schedule.findOne({
            where: {
              employee_id : employeeId,
-             start_time : {$gt:newDate()}
+             start_time : { $gt: new Date() }
            },
            order : [['start_time', 'ASC']]
          })
