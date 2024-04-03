@@ -1,6 +1,7 @@
 // Import necessary modules and models
 const router = require('express').Router()
-const Schedule = require('../../models')
+const {Employee, Schedule} = require('../../models')
+
 
 
 // Handle POST request to create a new schedule
@@ -35,7 +36,12 @@ router.get('/:id', async (req, res) => {
         const { id } = req.params
 
         // Retrieve the schedule from the database based on the provided ID
-        const schedule = await Schedule.findById(id)
+        //const schedule = await Schedule.findById(id)
+        const schedule = await Schedule.findAll({
+            where: {
+              employee_id : id
+            }
+          })
 
         // Check if the shift exists
         if (!schedule) {
@@ -44,7 +50,7 @@ router.get('/:id', async (req, res) => {
         }
 
         // If the shift is found, return it as a response
-        res.status(200).json({ schedule })
+        res.status(200).json(schedule)
     } catch (error) {
         // Handle errors
         console.error('Error retrieving schedule:', error)
@@ -56,10 +62,10 @@ router.get('/:id', async (req, res) => {
 router.get('/', async (req, res) => {
     try {
         // Retrieve all schedules from the database
-        const schedules = await Schedule.find()
+        const schedules = await Schedule.findAll()
 
         // Return the schedules as a response
-        res.status(200).json({ schedules })
+        res.status(200).json(schedules)
     } catch (error) {
         // Handle errors
         console.error('Error retrieving schedules:', error)
