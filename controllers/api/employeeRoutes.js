@@ -62,4 +62,18 @@ router.post('/logout', (req, res) => {
   }
 });
 
+//http://localhost:3001/api/employees/ 
+router.get('/', (req, res) => {
+  try {
+  const employeeData = Employee.findAll({
+    where: {
+      manager_id: null
+    }
+  })
+  res.status(200).json(employeeData)
+}catch(err){
+  res.status(400).json(err)
+}
+});
+
 module.exports = router

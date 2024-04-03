@@ -36,8 +36,7 @@ Employee.init(
       },
     },
     manager_id : {
-      type : DataTypes.INTEGER,
-      defaultValue : 6
+      type : DataTypes.INTEGER
     }
   },
   {
