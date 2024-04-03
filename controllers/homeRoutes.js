@@ -18,12 +18,15 @@ router.get('/login', async (req, res) => {
   res.render('login')
 });
 
+router.get('/register', (req, res)=> {
+  res.render('register')
+})
 //http://localhost:3001/dashboard
 // Use withAuth middleware to prevent access to route
 router.get('/dashboard', withAuth, async (req, res) => {
     try {
       // Find the logged in employee based on the session ID
-      const employeeData = await Employee.findByPk(req.session.employeeID, {
+      const employeeData = await Employee.findByPk(req.session.employee_id, {
         attributes: { exclude: ['password'] },
         include: [{ model: Schedule }],
       })

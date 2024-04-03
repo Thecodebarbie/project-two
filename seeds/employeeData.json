@@ -1,43 +1,41 @@
 [
     {
-        "username" : "Tim-Robert",
-        "email" : "timrobert@gmail.com",
+        "name" : "Tim Robert",
+        "email" : "timrob@hotmail.com",
         "password" : "password123",
-        "employeeID" : "1245",
-        "managerID" : "NULL"
+        "manager_id" : 6
     },
     {
-        "username" : "Rob-Alexander",
-        "email": "robalexander@hotmail.com",
+        "name" : "Rob Alexander",
+        "email" : "robal@gmail.com",
         "password" : "password123",
-        "employeeID" : "1345",
-        "managerID" : "NULL"
+        "manager_id" : 6
     },
     {
-        "name" : "Diana-John",
-        "email" : "dianajohn@yahoo.com",
+        "name" : "Diana John",
+        "email" : "dianajo@hotmail.com",
         "password" : "password123",
-        "employeeID" : "2345",
-        "managerID" : "NULL"
+        "manager_id" : 6
     },
     {
-        "username" : "Mary-Xavier",
-        "email": "maryxavier@gmail.com",
+        "name" : "Mary Xavier",
+        "email" : "maryxa@hotmail.com",
         "password" : "password123",
-        "employeeID" : "1234",
-        "managerID" : "NULL"
+        "manager_id" : 6
     },
     {
-        "username" : "April-Daniel",
-        "email" : "aprildaniel@aol.com",
+        "name" : "April Daniel",
+        "email" : "aprildan@hotmail.com",
         "password" : "password123",
-        "employeeID" : "1254",
-        "managerID" : "NULL"
+        "manager_id" : 6
+        
     },
-    {   "username" : "Paige-Francis",
-        "email" : "paigefrancis@yahoo-com",
+    {
+        "name" : "Paige Francis",
+        "email" : "paigefr@hotmail.com",
         "password" : "password123",
-        "employeeID" : "NULL",
-        "managerID" : "5413"
+        "manager_id" : null
+
+        
     }
 ]
