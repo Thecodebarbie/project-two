@@ -31,10 +31,11 @@ router.post('/', async (req, res) => {
 })
 
 // Handle GET request to retrieve a specific schedule by employeeId
-router.get('/employee/:id', async (req, res) => {
+// http://localhost:3001/api/schedules/:id
+router.get('/:id', async (req, res) => {
     try {
         // Extract the schedule ID from the request parameters
-        const { employeeId } = req.params
+        const employeeId  = req.params.id
 
         // Retrieve the schedule from the database based on the provided ID
         //const schedule = await Schedule.findByPk(employeeID)
@@ -52,38 +53,6 @@ router.get('/employee/:id', async (req, res) => {
 
         // If the shift is found, return it as a response
         res.status(200).json(schedule)
-    } catch (error) {
-        // Handle errors
-        console.error('Error retrieving schedule:', error)
-        res.status(500).json({ message: 'Internal server error' })
-    }
-})
-
-// Handle GET request to retrieve next schedule by employeeId
-// http://localhost:3001/api/schedules/nextschedule/:id
-router.get('/nextschedule/:id', async (req, res) => {
-    try {
-        // Extract the schedule ID from the request parameters
-        const employeeId  = req.params
-
-        // Find the next schedule for the given employeeId where startTime is greater than current time
-     const nextScheduleData = await Schedule.findOne({
-      where: {
-        employee_id : employeeId,
-        //startTime: { $gt: new Date() } // Get schedules that start after current time
-      },
-      order: [['start_time', 'ASC']], // Order by startTime in ascending order
-      limit: 1 // Limit the result to only one schedule
-    });
-
-        // Check if the shift exists
-        if (!nextScheduleData) {
-            // If the schedule is not found, return a 404 Not Found response
-            return res.status(404).json({ message: 'Schedule not found' })
-        }
-
-        // If the schedule is found, return it as a response
-        res.status(200).json(nextScheduleData)
     } catch (error) {
         // Handle errors
         console.error('Error retrieving schedule:', error)
@@ -166,6 +135,7 @@ router.delete('/:id', async (req, res) => {
 })
 
 // Timecard = Total scheduled hours
+// http://localhost:3001/api/schedules/:id
 router.get('/timecard/:id', async (req,res) => {
     try {
             // Extract the employee ID from the request parameters
