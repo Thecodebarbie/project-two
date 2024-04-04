@@ -74,7 +74,7 @@ router.get('/', async (req, res) => {
 })
 
 // http://localhost:3001/api/employees/schedules/:id
-router.get('/schedules/:id', async (req, res) => {
+router.post('/schedules/:id', async (req, res) => {
   try {
       // Extract the schedule ID from the request parameters
       const employeeId  = req.params.id
@@ -102,7 +102,7 @@ router.get('/schedules/:id', async (req, res) => {
 })
 
 // http://localhost:3001/api/employees/nextschedule/
-router.get('/nextschedule/', async (req, res) => {
+router.post('/nextschedule/', async (req, res) => {
   try {
       // Extract the schedule ID from the request parameters
       const employeeId  = req.session.employee_id

@@ -30,7 +30,7 @@ router.post('/request', async (req, res) => {
 });
 
 // Endpoint to retrieve all calloff requests
-router.get('/requests', async (req, res) => {
+router.post('/requests', async (req, res) => {
     try {
         // Retrieve all calloff requests from the database
         const callOffRequests = await CallOff.find()

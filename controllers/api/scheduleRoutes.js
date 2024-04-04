@@ -32,7 +32,7 @@ router.post('/', async (req, res) => {
 
 // Handle GET request to retrieve a specific schedule by employeeId
 // http://localhost:3001/api/schedules/:id
-router.get('/:id', async (req, res) => {
+router.post('/:id', async (req, res) => {
     try {
         // Extract the schedule ID from the request parameters
         const employeeId  = req.params.id
@@ -61,7 +61,7 @@ router.get('/:id', async (req, res) => {
 })
 
 // Handle GET request to retrieve all schedules
-router.get('/', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         // Retrieve all schedules from the database
         const schedules = await Schedule.findAll()
