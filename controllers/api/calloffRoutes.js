@@ -1,6 +1,6 @@
 // Import necessary modules and models
 const router = require('express').Router()
-const Calloff = require('../../models')
+const CallOff = require('../../models')
 
 // Endpoint to initiate a calloff request
 router.post('/request', async (req, res) => {
@@ -9,7 +9,7 @@ router.post('/request', async (req, res) => {
         const { employee_id, start_date, end_date, reason } = req.body;
 
         // Create a new calloff request
-        const newCallOffRequest = new Calloff({
+        const newCallOffRequest = new CallOff({
             employee_id,
             start_date,
             end_date,
@@ -33,7 +33,7 @@ router.post('/request', async (req, res) => {
 router.get('/requests', async (req, res) => {
     try {
         // Retrieve all calloff requests from the database
-        const callOffRequests = await Calloff.find()
+        const callOffRequests = await CallOff.find()
 
         // Send the calloff requests as a response
         res.status(200).json({ callOffRequests })
@@ -54,7 +54,7 @@ router.put('/requests/:id', async (req, res) => {
         const { status } = req.body;
 
         // Find the request in the database and update its status
-        await Calloff.findByIdAndUpdate(id, { status })
+        await CallOff.findByIdAndUpdate(id, { status })
 
         // Send a success response
         res.status(200).json({ message: 'Calloff request status updated successfully' })
@@ -66,10 +66,10 @@ router.put('/requests/:id', async (req, res) => {
 });
 
 // Endpoint to retrieve the calloff schedule
-router.get('/schedule', async (req, res) => {
+router.get('/calloff', async (req, res) => {
     try {
         // Retrieve approved calloff requests from the database
-        const approvedCallOffRequests = await Calloff.find({ status: 'Approved' })
+        const approvedCallOffRequests = await CallOff.find({ status: 'Approved' })
 
         // Send the approved calloff requests as a response
         res.status(200).json({ approvedCallOffRequests })
