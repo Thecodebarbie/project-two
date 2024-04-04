@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Hind:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/* * & body styles are set first */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    background-image: linear-gradient(135deg, #AA6DA3 10%, #3c0554 100%);
+    font-family: "DM Sans", sans-serif;
+    
+}
+body::before,
+body::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+body::before {
+    clip-path: circle(30% at left 20%);
+    opacity: 0.4;
+    background-image: linear-gradient(178deg, #F0E5EF 10%, #3c0554 100%);
+}
+
+body::after {
+    opacity: 0.6;
+    clip-path: circle(25% at right 80%);
+    background-image: linear-gradient(179deg, #8b4983 10%, #F0E5EF 100%);
+}
+/* next is header */
+header {
+    height: 88vh;
+    width: 90%;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 12;
+    border-radius: 25px;
+    margin: auto;
+    position: relative;
+}
+
+.logo a img {
+    width: 80px; /* Adjust the width as per your requirement */
+    height: auto; /* Maintains aspect ratio */
+}
+
+/* next 4 styles code right after the other*/
+header .navbar {
+    margin: auto;
+    width: 100%;
+    padding: 35px 50px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo a {
+    text-decoration: none;
+    font-size: 22px;
+    color: #000;
+    font-weight: 500;
+}
+
+header .navbar .menu {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 185px; /* Increase the padding to move the menu links more to the right */
+}
+
+.navbar .menu li {
+    list-style: none;
+    margin: 0 6px;
+}
+
+.navbar .menu a {
+    color: #2c0844;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.navbar .menu a:hover {
+    color: #ffdcf0;
+}
+
+/* Glassmorphism Effect for buttons in Navbar */
+.navbar .buttons input {
+    background: rgba(170, 109, 163, 0.1); /* Changed to #AA6DA3 with 0.1 opacity */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 10px 30px; /* Adjust padding for the navbar buttons */
+    border-radius: 15px; /* Rounded corners */
+    margin: 0 8px; /* Add margin between buttons */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px; /* Adjust text size for the navbar buttons */
+}
+
+.navbar .buttons input:hover {
+    background: rgba(170, 109, 163, 0.2); /* Changed to #AA6DA3 with 0.2 opacity */
+    transform: scale(0.97);
+}
+
+.buttons a {
+    text-decoration: none;
+}
+
+.text-content {
+    text-align: center; /* Center the text content */
+    color: #dfb5f0;
+}
+ 
+.text-content h1 {
+    margin-top: 2px; /* Moving the h2 down the screen with minimal space */
+    font-size: 32px;
+}
+
+.text-content h2 {
+    margin-left: 50px; /* Moving the h2 to the right */
+    margin-top: 25px; /* Moving the h2 down the screen with minimal space */
+    font-size: 32px;
+}
+
+.text-content h3,
+.text-content p {
+    margin-left: 50px; /* Moving the h2 to the right */
+    margin-top: 10px
+}
+
+/* Glassmorphism Effect for buttons in auth-buttons */
+.auth-buttons {
+    text-align: center; /* Center the buttons */
+    padding-top: 90px; /* Move the buttons down */
+}
+.auth-buttons .btn {
+    padding: 15px 50px; /* Make the buttons longer */
+    margin: 20px 10px; /* Add more margin around the buttons */
+    font-size: 18px; /* Increase text size */
+}
+.glass-btn {
+    background: rgba(170, 109, 163, 0.1); /* Changed to #AA6DA3 with 0.1 opacity */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.glass-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(0.97);
+}

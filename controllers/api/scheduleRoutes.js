@@ -31,10 +31,11 @@ router.post('/', async (req, res) => {
 })
 
 // Handle GET request to retrieve a specific schedule by employeeId
-router.get('/employee/:id', async (req, res) => {
+// http://localhost:3001/api/schedules/:id
+router.post('/:id', async (req, res) => {
     try {
         // Extract the schedule ID from the request parameters
-        const { employeeId } = req.params
+        const employeeId  = req.params.id
 
         // Retrieve the schedule from the database based on the provided ID
         //const schedule = await Schedule.findByPk(employeeID)
@@ -59,39 +60,8 @@ router.get('/employee/:id', async (req, res) => {
     }
 })
 
-// Handle GET request to retrieve next schedule by employeeId
-// http://localhost:3001/api/schedules/nextschedule/:id
-router.get('/nextschedule/:id', async (req, res) => {
-    try {
-        // Extract the schedule ID from the request parameters
-        const employeeId  = req.params
-        
-        // Retrieve the next schedule from the database based on the provided employeeId
-        const nextScheduleData = await Schedule.findOne({
-           where: {
-             employee_id : employeeId,
-             start_time : { $gt: new Date() }
-           },
-           order : [['start_time', 'ASC']]
-         })
-
-        // Check if the shift exists
-        if (!nextScheduleData) {
-            // If the schedule is not found, return a 404 Not Found response
-            return res.status(404).json({ message: 'Schedule not found' })
-        }
-
-        // If the schedule is found, return it as a response
-        res.status(200).json(nextScheduleData)
-    } catch (error) {
-        // Handle errors
-        console.error('Error retrieving schedule:', error)
-        res.status(500).json({ message: 'Internal server error' })
-    }
-})
-
 // Handle GET request to retrieve all schedules
-router.get('/', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         // Retrieve all schedules from the database
         const schedules = await Schedule.findAll()
@@ -165,7 +135,8 @@ router.delete('/:id', async (req, res) => {
 })
 
 // Timecard = Total scheduled hours
-router.get('/timecard/:id', async (req,res) => {
+// http://localhost:3001/api/schedules/:id
+router.post('/timecard/:id', async (req,res) => {
     try {
             // Extract the employee ID from the request parameters
             const employeeId = req.params
