@@ -136,7 +136,7 @@ router.delete('/:id', async (req, res) => {
 
 // Timecard = Total scheduled hours
 // http://localhost:3001/api/schedules/:id
-router.get('/timecard/:id', async (req,res) => {
+router.post('/timecard/:id', async (req,res) => {
     try {
             // Extract the employee ID from the request parameters
             const employeeId = req.params

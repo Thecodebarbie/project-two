@@ -66,7 +66,7 @@ router.put('/requests/:id', async (req, res) => {
 });
 
 // Endpoint to retrieve the calloff schedule
-router.get('/calloff', async (req, res) => {
+router.post('/calloff', async (req, res) => {
     try {
         // Retrieve approved calloff requests from the database
         const approvedCallOffRequests = await CallOff.find({ status: 'Approved' })

@@ -64,7 +64,7 @@ router.post('/logout', (req, res) => {
 })
 
 //http://localhost:3001/api/employees/ 
-router.get('/', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
   const employeeData = await Employee.findAll()
   res.status(200).json(employeeData)
