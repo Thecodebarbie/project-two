@@ -1,9 +1,20 @@
 const log1 = document.getElementById('log-1')
-//const log2 = document.getElementById('log-2')
+const log2 = document.getElementById('log-2')
 
-function goToLogin() { //redirect to login
-    location.href = '/login'
+const reg2 = document.getElementById('reg-2')
+
+
+function redirectToLogin() {
+    window.location.href = "/login";
 }
 
-log1.addEventListener('click', goToLogin)
-//log2.addEventListener('click', goToLogin)
+// Function to redirect to register page
+function redirectToRegister() {
+    window.location.href = "/register";
+}
+
+// Event listener for Login button
+document.getElementById("log-2").addEventListener("click", redirectToLogin);
+
+// Event listener for Register button
+document.getElementById("reg-2").addEventListener("click", redirectToRegister);
