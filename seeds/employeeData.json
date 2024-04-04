@@ -2,35 +2,39 @@
     {
         "name" : "Tim Robert",
         "email" : "timrob@hotmail.com",
-        "password" : "password123"
+        "password" : "password123",
+        "auth_id" : 1245
     },
     {
         "name" : "Rob Alexander",
         "email" : "robal@gmail.com",
-        "password" : "password123"
+        "password" : "password123",
+        "auth_id" : 1345
     },
     {
         "name" : "Diana John",
         "email" : "dianajo@hotmail.com",
-        "password" : "password123"
+        "password" : "password123",
+        "auth_id" : 2345
     },
     {
         "name" : "Mary Xavier",
         "email" : "maryxa@hotmail.com",
-        "password" : "password123"
+        "password" : "password123",
+        "auth_id" : 1234
     },
     {
         "name" : "April Daniel",
         "email" : "aprildan@hotmail.com",
-        "password" : "password123"
+        "password" : "password123",
+        "auth_id" : 1254
         
     },
     {
         "name" : "Paige Francis",
         "email" : "paigefr@hotmail.com",
         "password" : "password123",
+        "auth_id" : 5413,
         "manager_id" : 106
-
-        
     }
 ]

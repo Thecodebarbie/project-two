@@ -65,15 +65,16 @@ router.get('/nextschedule/:id', async (req, res) => {
     try {
         // Extract the schedule ID from the request parameters
         const employeeId  = req.params
-        
-        // Retrieve the next schedule from the database based on the provided employeeId
-        const nextScheduleData = await Schedule.findOne({
-           where: {
-             employee_id : employeeId,
-             start_time : { $gt: new Date() }
-           },
-           order : [['start_time', 'ASC']]
-         })
+
+        // Find the next schedule for the given employeeId where startTime is greater than current time
+     const nextScheduleData = await Schedule.findOne({
+      where: {
+        employee_id : employeeId,
+        //startTime: { $gt: new Date() } // Get schedules that start after current time
+      },
+      order: [['start_time', 'ASC']], // Order by startTime in ascending order
+      limit: 1 // Limit the result to only one schedule
+    });
 
         // Check if the shift exists
         if (!nextScheduleData) {
