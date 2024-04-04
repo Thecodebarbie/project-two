@@ -1,41 +1,46 @@
 [
     {
-        "name" : "Tim Robert",
+        "first_name" : "Tim",
+        "last_name" : "Robert",
         "email" : "timrob@hotmail.com",
         "password" : "password123",
-        "manager_id" : 6
+        "auth_id" : 1245
     },
     {
-        "name" : "Rob Alexander",
+        "first_name" : "Rob",
+        "last_name" : "Alexander",
         "email" : "robal@gmail.com",
         "password" : "password123",
-        "manager_id" : 6
+        "auth_id" : 1345
     },
     {
-        "name" : "Diana John",
+        "first_name" : "Diana",
+        "last_name" : "John",
         "email" : "dianajo@hotmail.com",
         "password" : "password123",
-        "manager_id" : 6
+        "auth_id" : 2345
     },
     {
-        "name" : "Mary Xavier",
+        "first_name" : "Mary",
+        "last_name" : "Xavier",
         "email" : "maryxa@hotmail.com",
         "password" : "password123",
-        "manager_id" : 6
+        "auth_id" : 1234
     },
     {
-        "name" : "April Daniel",
+        "first_name" : "April",
+        "last_name" : "Daniel",
         "email" : "aprildan@hotmail.com",
         "password" : "password123",
-        "manager_id" : 6
+        "auth_id" : 1254
         
     },
     {
-        "name" : "Paige Francis",
+        "first_name" : "Paige",
+        "last_name" : "Francis",
         "email" : "paigefr@hotmail.com",
         "password" : "password123",
-        "manager_id" : null
-
-        
+        "auth_id" : 5413,
+        "manager_id" : 106
     }
 ]

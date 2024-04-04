@@ -16,7 +16,11 @@ Employee.init(
       primaryKey : true,
       autoIncrement : true,
     },
-    name: {
+    first_name: {
+      type : DataTypes.STRING,
+      allowNull : false,
+    },
+    last_name: {
       type : DataTypes.STRING,
       allowNull : false,
     },
@@ -35,7 +39,13 @@ Employee.init(
         len : [8],
       },
     },
+    phone_number : {
+      type : DataTypes.INTEGER
+    },
     manager_id : {
+      type : DataTypes.INTEGER
+    },
+    auth_id : {
       type : DataTypes.INTEGER
     }
   },

@@ -1,6 +1,6 @@
 // Import necessary modules and models
 const router = require('express').Router()
-const Scheduleswap = require('../../models')
+const ScheduleSwap = require('../../models')
 
 // Endpoint to initiate a schedule swap request
 router.post('/request', async (req, res) => {
@@ -9,7 +9,7 @@ router.post('/request', async (req, res) => {
         const { employee_id, current_schedule_id, requested_schedule_id} = req.body
 
         // Create a new schedule swap request
-        const newSwapRequest = new Scheduleswap({
+        const newSwapRequest = new ScheduleSwap({
             employee_id,
             current_schedule_id,
             requested_schedule_id,
@@ -35,7 +35,7 @@ router.put('/accept/:id', async (req, res) => {
         const { id } = req.params
 
         // Find the request in the database and update its status to 'Accepted'
-        await Scheduleswap.findByIdAndUpdate(id, { status: 'Accepted' })
+        await ScheduleSwap.findByIdAndUpdate(id, { status: 'Accepted' })
 
         // Send a success response
         res.status(200).json({ message: 'Schedule swap request accepted successfully' })
@@ -53,7 +53,7 @@ router.put('/reject/:id', async (req, res) => {
         const { id } = req.params
 
         // Find the request in the database and update its status to 'Rejected'
-        await Scheduleswap.findByIdAndUpdate(id, { status: 'Rejected' })
+        await ScheduleSwap.findByIdAndUpdate(id, { status: 'Rejected' })
 
         // Send a success response
         res.status(200).json({ message: 'Schedule swap request rejected successfully' })
