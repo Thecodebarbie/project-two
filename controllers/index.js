@@ -1,5 +1,6 @@
 const router = require("express").Router()
 
+
 apiRoutes = require("./api")
 htmlRoutes = require("./homeRoutes")
 
@@ -10,5 +11,8 @@ router.use("/", htmlRoutes)
 /* API routes */
 //http:localhost:3001/api
 router.use("/api", apiRoutes)
+
+
+
 
 module.exports = router

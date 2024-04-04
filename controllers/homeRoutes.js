@@ -21,6 +21,15 @@ router.get('/login', async (req, res) => {
 router.get('/register', (req, res)=> {
   res.render('register')
 })
+
+router.get('/authenticate', async (req, res) => {
+  
+  res.render('authenticate',{
+    layout: "main"
+  })
+
+})
+
 //http://localhost:3001/dashboard
 // Use withAuth middleware to prevent access to route
 router.get('/dashboard', withAuth, async (req, res) => {
@@ -35,7 +44,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
   
       res.render('dashboard', {
         ...employee,
-        logged_in: true,  layout: "dashboard"
+        logged_in: true,
+        layout: "dashboard",  layout: "dashboard"
       })
     } catch (err) {
       res.status(500).json(err)
