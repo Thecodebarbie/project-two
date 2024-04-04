@@ -8,8 +8,8 @@ Employee.hasMany(Schedule, {
     onDelete : "CASCADE"
 })
 
-Schedule.hasMany(Employee, {
-    foreignKey : "schedule_id"
+Schedule.belongsTo(Employee, {
+    foreignKey : "employee_id"
 })
 
 Employee.hasMany(Scheduleswap, {
