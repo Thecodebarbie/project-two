@@ -9,16 +9,15 @@
    
     <link rel="stylesheet" href="./css/login.css">
     <link rel="stylesheet" href="./css/register.css">
-    <link rel="stylesheet" href="./css/dashboard.css">
     <link rel="stylesheet" href="./css/landing.css">
-    
+    <link rel="stylesheet" href="./css/twoFactorAuth.css">
 
 </head>
 
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo"><a href="#"><img src="images/saavy-brand.png"></a></div>
+            <div class="logo"><a href="/landing.handlebars"><img src="images/saavy-brand.png" alt="Saavy Brand Logo"></a></div>
             <ul class="menu">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
@@ -26,7 +25,7 @@
             </ul>
             <div class="buttons">
                 <a href="/login" id="log-1" type="button" value="Login" class="btn glass-btn">Login</a>
-                <a href="/register" type="button" value="Register" class="btn glass-btn">Register</a>
+                <a href="/register" id="reg-2" type="button" value="Register" class="btn glass-btn">Register</a>
             </div>
         </nav>
         {{{body}}}
@@ -35,6 +34,9 @@
 <main>
         
 </main>
+
+
+<script src="/js/login.js"></script>
 </body>
 
 </html>

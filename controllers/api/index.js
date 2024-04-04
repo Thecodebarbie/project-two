@@ -5,6 +5,7 @@ const employeeRoutes = require("./employeeRoutes")
 const scheduleRoutes = require("./scheduleRoutes")
 const scheduleSwapRoutes = require("./scheduleSwapRoutes")
 const callOffRoutes = require("./callOffRoutes")
+const twoFactorRoutes = require("./twoFactorRoutes")
 
 // http://localhost:3001/api/employees
 router.use("/employees", employeeRoutes)
@@ -17,5 +18,8 @@ router.use("/scheduleswap", scheduleSwapRoutes)
 
 // http://localhost:3001/api/calloff
 router.use("/calloff", callOffRoutes)
+
+// http://localhost:3001/api/authenticate
+router.use("/authenticate", twoFactorRoutes)
 
 module.exports = router
