@@ -26,23 +26,20 @@ Calloff.init(
             }
 
         },
-        date_created : {
+        schedule_date : {
             type : DataTypes.DATE,
             allowNull : false,
             defaultValue : DataTypes.NOW
         },
-        start_date : {
+        start_time : {
             type : DataTypes.DATE,
             allowNull : false,
             defaultValue : DataTypes.NOW
         },
-        end_date : {
+        end_time : {
             type : DataTypes.DATE,
             allowNull : false,
             defaultValue : DataTypes.NOW
-        },
-        reason : {
-            type : DataTypes.STRING
         },
         status : {
             type : DataTypes.STRING
