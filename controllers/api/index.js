@@ -3,8 +3,8 @@ const router = require("express").Router()
 // Importing the API endpoint routes
 const employeeRoutes = require("./employeeRoutes")
 const scheduleRoutes = require("./scheduleRoutes")
-const scheduleSwapRoutes = require("./scheduleSwapRoute")
-const callOffRoutes = require("./callOffRoutes")
+const scheduleSwapRoutes = require("./scheduleSwapRoutes")
+const callOffRoutes = require("./callOffRoute")
 const twoFactorRoutes = require("./twoFactorRoutes")
 
 // http://localhost:3001/api/employees

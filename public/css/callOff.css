@@ -1,0 +1,277 @@
+/* Importing Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background-image: url("../images/dash-bck.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 110px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(17px);
+    --webkit-backdrop-filter: blur(17px);
+    border-right: 1px solid rgba(255, 255, 255, 0.7);
+    transition: width 0.3s ease;
+}
+
+.sidebar:hover {
+    width: 260px;
+}
+
+.sidebar .logo {
+    color: #000;
+    display: flex;
+    align-items: center;
+    padding: 25px 10px 15px;
+}
+
+.logo img {
+    width: 43px;
+    border-radius: 50%;
+}
+
+.logo h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-left: 15px;
+    display: none;
+}
+
+.sidebar:hover .logo h3 {
+    display: block;
+}
+
+.sidebar .links {
+    list-style: none;
+    margin-top: 20px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    height: calc(100% - 140px);
+}
+
+.sidebar .links::-webkit-scrollbar {
+    display: none;
+}
+
+.links li {
+    display: flex;
+    border-radius: 4px;
+    align-items: center;
+}
+
+.links li:hover {
+    cursor: pointer;
+    background: #fff;
+}
+
+.links h4 {
+    color: #222;
+    font-weight: 500;
+    display: none;
+    margin-bottom: 10px;
+}
+
+.sidebar:hover .links h4 {
+    display: block;
+}
+
+.links hr {
+    margin: 10px 8px;
+    border: 1px solid #4c4c4c;
+}
+
+.sidebar:hover .links hr {
+    border-color: transparent;
+}
+
+.links li span {
+    padding: 12px 10px;
+}
+
+.links li a {
+    padding: 10px;
+    color: #000;
+    display: none;
+    font-weight: 500;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.sidebar:hover .links li a {
+    display: block;
+}
+
+.links .logout-link {
+    margin-top: 20px;
+}
+
+.sidebar:hover + .dashboard {
+    left: 260px; /* Adjusted left position to match expanded sidebar width */
+    width: calc(100% - 260px); /* Adjusted width to match expanded sidebar width */
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 460px;
+    /* Added margin-top to move the form down */
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transition: all 1s ease;
+    
+}
+
+.form .form_front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 555px;
+    gap: 20px;
+    position: absolute;
+    backface-visibility: hidden;
+    padding: 65px 45px;
+    border-radius: 15px;
+    background-color:rgba(48, 5, 84, 0.7);
+    box-shadow: inset 2px 2px 10px rgb(228, 154, 219),
+        inset -1px -1px 5px rgba(255, 255, 255, 0.6);
+}
+
+.form .form_back {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(-180deg);
+    padding: 65px 45px;
+    border-radius: 15px;
+    box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 1),
+        inset -1px -1px 5px rgba(255, 255, 255, 0.6);
+}
+
+.form_details {
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    color: white;
+}
+
+.input {
+    width: 450px;
+    min-height: 45px;
+    color: #fff;
+    outline: none;
+    transition: 0.35s;
+    padding: 0px 7px;
+    background-color: rgba(45, 4, 59, 0.596);
+    border-radius: 6px;
+    border: 2px solid rgba(255, 255, 255, 0.1); /* Translucent border */
+  box-shadow: 0 20px 50px rgba(170, 109, 163, 0.4), 
+              0 10px 15px rgba(170, 109, 163, 0.4),
+              inset 2px 2px 15px rgba(0,0,0,0.2),
+              inset -1px -1px 7px rgba(255, 255, 255, 0.3);
+}
+
+.input::placeholder {
+    color: #f3e5e5;
+}
+
+.input:focus.input::placeholder {
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.input:focus {
+    transform: scale(1.05);
+    box-shadow: 0 20px 50px rgba(239, 164, 230, 0.4), 
+    0 10px 15px rgba(170, 109, 163, 0.4),
+    inset 2px 2px 15px rgba(0,0,0,0.2),
+    inset -1px -1px 7px rgba(255, 255, 255, 0.3);
+}
+
+.btn {
+    padding: 10px 35px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Updated background color to be translucent */
+    border-radius: 6px;
+    border: 2px solid #a86daa;
+    box-shadow: 6px 6px 10px rgba(214, 173, 235, 0.1),
+        1px 1px 10px rgba(197, 116, 247, 0.1);
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.35s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.15);
+    /* Updated background color to be more translucent on hover */
+    box-shadow: 0 20px 50px rgba(238, 164, 229, 0.4),
+        0 10px 15px rgba(170, 109, 163, 0.4),
+        inset 2px 2px 15px rgba(201, 105, 236, 0.2),
+        inset -1px -1px 7px rgba(255, 255, 255, 0.3);
+}
+
+.btn:focus {
+    transform: scale(1.05);
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 1),
+        1px 1px 10px rgba(255, 255, 255, 0.6),
+        inset 2px 2px 10px rgba(0, 0, 0, 1),
+        inset -1px -1px 5px rgba(255, 255, 255, 0.6);
+}
+
+.form .switch {
+    font-size: 13px;
+    color: white;
+}
+
+.form .switch .signup_tog {
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.container #calloff_toggle_success {
+    display: none;
+}
+
+.container #calloff_toggle_succes:checked+.form {
+    transform: rotateY(-180deg);
+}
+
+.signup_tog {
+  color: #3c0554;
+}
+
+#success-section {
+    display: none;
+}
