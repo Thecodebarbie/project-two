@@ -1,19 +1,19 @@
 // Import necessary modules and models
 const router = require('express').Router()
-const CallOff = require('../../models')
+const Calloff = require('../../models')
 
 // Endpoint to initiate a calloff request
 router.post('/request', async (req, res) => {
     try {
         // Extract data from the request body
-        const { employee_id, start_date, end_date, reason } = req.body;
+        const { employee_id, schedule_date, start_time, end_time } = req.body;
 
         // Create a new calloff request
-        const newCallOffRequest = new CallOff({
+        const newCallOffRequest = new Calloff({
             employee_id,
-            start_date,
-            end_date,
-            reason,
+            schedule_date,
+            start_time,
+            end_time,
             status: 'Pending' // Initial status
         })
 
@@ -30,10 +30,10 @@ router.post('/request', async (req, res) => {
 });
 
 // Endpoint to retrieve all calloff requests
-router.post('/requests', async (req, res) => {
+router.get('/requests', async (req, res) => {
     try {
         // Retrieve all calloff requests from the database
-        const callOffRequests = await CallOff.find()
+        const callOffRequests = await Calloff.find()
 
         // Send the calloff requests as a response
         res.status(200).json({ callOffRequests })
@@ -54,7 +54,7 @@ router.put('/requests/:id', async (req, res) => {
         const { status } = req.body;
 
         // Find the request in the database and update its status
-        await CallOff.findByIdAndUpdate(id, { status })
+        await Calloff.findByIdAndUpdate(id, { status })
 
         // Send a success response
         res.status(200).json({ message: 'Calloff request status updated successfully' })
@@ -66,10 +66,10 @@ router.put('/requests/:id', async (req, res) => {
 });
 
 // Endpoint to retrieve the calloff schedule
-router.post('/calloff', async (req, res) => {
+router.get('/schedule', async (req, res) => {
     try {
         // Retrieve approved calloff requests from the database
-        const approvedCallOffRequests = await CallOff.find({ status: 'Approved' })
+        const approvedCallOffRequests = await Calloff.find({ status: 'Approved' })
 
         // Send the approved calloff requests as a response
         res.status(200).json({ approvedCallOffRequests })
