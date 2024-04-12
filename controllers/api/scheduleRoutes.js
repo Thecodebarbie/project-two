@@ -113,26 +113,23 @@ router.put('/:id', async (req, res) => {
 // Handle DELETE request to delete an existing schedule by ID
 router.delete('/:id', async (req, res) => {
     try {
-        // Extract the schedule ID from the request parameters
-        const { id } = req.params
-
-        // Find the schedule in the database and delete it
-        const deletedSchedule = await Schedule.findByIdAndDelete(id)
-
-        // Check if the schedule exists
-        if (!deletedSchedule) {
-            // If the schedule is not found, return a 404 Not Found response
-            return res.status(404).json({ message: 'Schedule not found' })
-        }
-
-        // Return a success response
-        res.status(200).json({ message: 'Schedule deleted successfully' })
-    } catch (error) {
-        // Handle errors
-        console.error('Error deleting schedule:', error)
-        res.status(500).json({ message: 'Internal server error' })
+      const scheduleData = await Schedule.destroy({
+        where: {
+          id: req.params.id,
+        },
+      });
+  
+      if (!scheduleData) {
+        res.status(404).json({ message: 'No comment found with this id!' });
+        return;
+      }
+  
+      res.status(200).json(scheduleData);
+    } catch (err) {
+        console.error("Delete Message: ",err.message)
+      res.status(500).json(err);
     }
-})
+  });
 
 // Timecard = Total scheduled hours
 // http://localhost:3001/api/schedules/:id

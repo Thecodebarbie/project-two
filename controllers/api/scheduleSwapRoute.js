@@ -6,21 +6,13 @@ const ScheduleSwap = require('../../models')
 router.post('/request', async (req, res) => {
     try {
         // Extract data from the request body
-        const { employee_id, current_schedule_id, requested_schedule_id} = req.body
+        //const { employee_id, current_schedule_id, requested_schedule_id} = req.body
 
         // Create a new schedule swap request
-        const newSwapRequest = new ScheduleSwap({
-            employee_id,
-            current_schedule_id,
-            requested_schedule_id,
-            status: 'Pending' // Initial status
-        })
-
-        // Save the new swap request to the database
-        await newSwapRequest.save()
+        const newSwapRequest = await ScheduleSwap.create(req.body)
 
         // Send a success response
-        res.status(201).json({ message: 'Schedule swap request created successfully' })
+        res.status(201).json(newSwapRequest)
     } catch (error) {
         // Handle errors
         console.error('Error creating schedule swap request:', error)

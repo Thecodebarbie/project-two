@@ -26,11 +26,6 @@ Calloff.init(
             }
 
         },
-        schedule_date : {
-            type : DataTypes.DATE,
-            allowNull : false,
-            defaultValue : DataTypes.NOW
-        },
         start_time : {
             type : DataTypes.DATE,
             allowNull : false,

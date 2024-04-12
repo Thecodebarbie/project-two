@@ -112,13 +112,13 @@ const handleSignup = async () => {
   const emailSignup = document.getElementById('signup-email').value.trim();
   const passwordSignup = document.getElementById('signup-password').value.trim();
   const signupPhone = document.getElementById('phone').value.trim();
-
-  if (validateSignupForm()) {
+//alert("signup")
+ /* if (validateSignupForm()) {
     try {
       const response = await fetch('/api/employees/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', },
-        body: JSON.stringify({ firstName, lastName, signupEmail, password, phone }),
+        body: JSON.stringify({ firstName, lastName, emailSignup, passwordSignup, signupPhone }),
       });
 
       const data = await response.json();
@@ -133,7 +133,7 @@ const handleSignup = async () => {
     } catch (error) {
       console.error('Error:', error);
     }
-  }
+  }*/
 };
 
 // Add event listener to sign-up 
@@ -143,7 +143,7 @@ document
   console.log('this btn works!!')
 
 document
-  .querySelector('#form-signup')
+  .querySelector('.form-signup')
   .addEventListener('submit', handleSignup);
   console.log("signup works")
 

@@ -20,7 +20,8 @@
     "express-session": "^1.17.1",
     "mysql2": "^3.9.3",
     "pg": "^8.11.3",
-    "sequelize": "^6.3.5"
+    "sequelize": "^6.3.5",
+    "twilio": "^5.0.3"
   },
   "devDependencies": {
     "eslint": "^7.12.1",
