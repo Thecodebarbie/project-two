@@ -1,0 +1,47 @@
+<section class="dashboard">
+        
+        <main class="dash-content">
+         
+            <section class="overview">
+                <header class="title">                 
+                    <i class="uil uil-tachometer-fast-alt"></i>
+                    <span class="text"><h2>Call Off Requests</h2></span>
+                </header>
+            </section>
+    
+            <section class="activity">
+    
+                <div class="activity-data">
+                    
+                    {{#if calloffs.length}}
+                    <table class="table bg-transparent">
+                        <thead>
+                            <tr>
+                                <th scope="col">ScheduleID</th>
+                                <th scope="col">EmployeeID</th>
+                                <th scope="col">Start time</th>
+                                <th scope="col">End Time</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider schedule-list">
+                            {{#each calloffs}}
+                            <tr>
+                            <th scope="row">{{id}}</th>
+                            <td>{{employee_id}}</td>
+                            <td>{{start_time}}</td>
+                            <td>{{end_time}}</td>
+                            <td>{{status}}</td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                    {{else}}
+                    <p><h3>No Call Off Request Yet!</h3></p>
+                    {{/if}}
+                </div>
+            </section>
+        </main>
+    </section>
+
+    <script src="/js/calloff.js"></script>
