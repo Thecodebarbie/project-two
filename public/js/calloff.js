@@ -1,3 +1,4 @@
+
 const callOffHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
       const schedule_id = event.target.getAttribute('data-id');
@@ -43,3 +44,4 @@ const callOffHandler = async (event) => {
 document
 .querySelector('.schedule-list')
 .addEventListener('click', callOffRequestHandler);
+
