@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const { Employee, Schedule } = require('../../models')
+require('dotenv').config()
 const accountSid = process.env.OTP
 const authToken = process.env.AUTH_ID
 const client = require('twilio')(accountSid, authToken);
