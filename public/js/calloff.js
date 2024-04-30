@@ -21,13 +21,13 @@ const callOffHandler = async (event) => {
     
       // Get the data from the cells of the row
       const schedule_id = row.querySelector('th').innerText;
-      //const dateCreated = row.querySelector('td:nth-child(2)').innerText;
+      const date_created = row.querySelector('td:nth-child(2)').innerText;
       const start_time = row.querySelector('td:nth-child(3)').innerText;
       const end_time = row.querySelector('td:nth-child(4)').innerText;
   
       const response = await fetch(`/api/calloff/request`, {
         method: 'POST',
-        body: JSON.stringify({ schedule_id, start_time, end_time }),
+        body: JSON.stringify({ schedule_id, date_created, start_time, end_time }),
         headers: { 'Content-Type': 'application/json' },
       });
   
