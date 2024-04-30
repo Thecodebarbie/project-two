@@ -39,13 +39,15 @@ const handleFormSubmit = async (event) => {
     event.preventDefault(); // Prevent form submission
 
     // Combine OTP inputs into a single string
-    const authenticationId = Array.from(otpInputs).map(input => input.value).join('');
+    const auth_id = Array.from(otpInputs).map(input => input.value).join('');
 
     // Send a POST request to the API endpoint
     const response = await fetch('/api/authenticate', {
         method: 'POST',
-        body: JSON.stringify({ authenticationId }),
+        body: JSON.stringify({ auth_id }),
+        //body: auth_id,
         headers: { 'Content-Type': 'application/json' },
+        //headers: { 'Content-Type': 'text/plain'}
     });
 
     if (response.ok) {

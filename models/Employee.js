@@ -40,13 +40,16 @@ Employee.init(
       },
     },
     phone_number : {
-      type : DataTypes.INTEGER
+      type : DataTypes.STRING(20),
+      allowNull:true
     },
     manager_id : {
-      type : DataTypes.INTEGER
+      type : DataTypes.INTEGER,
+      defaultValue: null
     },
     auth_id : {
-      type : DataTypes.INTEGER
+      type : DataTypes.INTEGER,
+      defaultValue:1234
     }
   },
   {

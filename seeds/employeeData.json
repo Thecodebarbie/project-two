@@ -4,6 +4,7 @@
         "last_name" : "Robert",
         "email" : "timrob@hotmail.com",
         "password" : "password123",
+        "phone_number": 7736563582,
         "auth_id" : 1245
     },
     {
@@ -11,6 +12,7 @@
         "last_name" : "Alexander",
         "email" : "robal@gmail.com",
         "password" : "password123",
+        "phone_number": 7736563582,
         "auth_id" : 1345
     },
     {
@@ -18,6 +20,7 @@
         "last_name" : "John",
         "email" : "dianajo@hotmail.com",
         "password" : "password123",
+        "phone_number": 7736563582,
         "auth_id" : 2345
     },
     {
@@ -25,6 +28,7 @@
         "last_name" : "Xavier",
         "email" : "maryxa@hotmail.com",
         "password" : "password123",
+        "phone_number": 7736563582,
         "auth_id" : 1234
     },
     {
@@ -32,6 +36,7 @@
         "last_name" : "Daniel",
         "email" : "aprildan@hotmail.com",
         "password" : "password123",
+        "phone_number": 7736563582,
         "auth_id" : 1254
         
     },
@@ -40,6 +45,7 @@
         "last_name" : "Francis",
         "email" : "paigefr@hotmail.com",
         "password" : "password123",
+        "phone_number": 7736563582,
         "auth_id" : 5413,
         "manager_id" : 106
     }
