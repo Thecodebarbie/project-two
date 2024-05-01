@@ -29,12 +29,12 @@ Calloff.init(
         start_time : {
             type : DataTypes.DATE,
             allowNull : false,
-            defaultValue : DataTypes.NOW
+            
         },
         end_time : {
             type : DataTypes.DATE,
             allowNull : false,
-            defaultValue : DataTypes.NOW
+            
         },
         status : {
             type : DataTypes.STRING
