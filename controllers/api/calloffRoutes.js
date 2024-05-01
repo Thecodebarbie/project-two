@@ -9,15 +9,32 @@ router.post('/request', async (req, res) => {
     try {
         const employeeId = req.session.employee_id
         const scheduleId = parseInt(req.body.schedule_id)
+        //const dateString = req.body.date_created
+
+        // Split the date string by the delimiter "-"
+        //const parts = dateString.split("-");
+        // Extract year, month, and day
+        //const year = parts[2];
+        //const month = parts[0].padStart(2, '0'); // Ensure two-digit representation
+        //const day = parts[1].padStart(2, '0'); // Ensure two-digit representation
+
+        // Form the formatted date string
+        //const formattedDate = `${year}:${month}:${day}`;
+        const Date = req.body.date_created.replace(/\//g, "-")
+       
+        const startTime = Date+' '+req.body.start_time
+        const endTime = Date+' '+req.body.end_time
         // Extract data from the request body
+    console.log(req.body)
     
         const callOffData = {
             schedule_id: scheduleId,
             employee_id: employeeId,
-            start_time: req.body.start_time,
-            end_time: req.body.end_time,
+            start_time: startTime,
+            end_time: endTime,
             status: 'Pending' // Initial status
           };
+          console.log(startTime+''+endTime)
           console.log("Calloff input:"+callOffData)
           // Create a new calloff request
         const newCallOffData = await Calloff.create(callOffData)
