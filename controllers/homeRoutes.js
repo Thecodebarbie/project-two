@@ -44,7 +44,7 @@ router.get('/calloff', async (req, res) => {
 const calloffs = callOffRequestsData.map(calloff => calloff.get({ plain: true }));
 console.log(calloffs)
 
-  res.render('calloff',{
+  res.render('callOff',{
     calloffs,
     layout: "dashboard"
   })
